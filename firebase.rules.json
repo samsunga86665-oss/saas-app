@@ -1,0 +1,46 @@
+// firebase.rules.json
+// Firebase Realtime Database Security Rules
+// Paste this in Firebase Console → Realtime Database → Rules
+
+{
+  "rules": {
+    "superowner": {
+      ".read": false,
+      ".write": false
+    },
+    "companies": {
+      "$companyId": {
+        ".read": "auth == null",
+        ".write": "auth == null",
+        "settings": {
+          ".read": true,
+          ".write": true
+        },
+        "users": {
+          ".read": true,
+          ".write": true
+        },
+        "orders": {
+          ".read": true,
+          ".write": true
+        },
+        "clients": {
+          ".read": true,
+          ".write": true
+        },
+        "products": {
+          ".read": true,
+          ".write": true
+        },
+        "sklad": {
+          ".read": true,
+          ".write": true
+        },
+        "expenses": {
+          ".read": true,
+          ".write": true
+        }
+      }
+    }
+  }
+}
